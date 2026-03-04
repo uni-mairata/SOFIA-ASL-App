@@ -38,10 +38,20 @@
 		>
 			<screen_create_event screen="screen_about" anim_type="move_top" duration="500" />
 		</lv_buttonmatrix> -->
-		<lv_obj align="bottom_mid" width="310" height="190" scrollbar_mode="auto" scroll_momentum="">
+		<lv_obj
+			align="bottom_mid"
+			width="310"
+			height="200"
+			scrollbar_mode="auto"
+			scroll_momentum=""
+			scroll_snap_x="center"
+			style_bg_color="0xe9c46a"
+		>
 			<lv_buttonmatrix
-				width="310"
-				height="400"
+				width="300"
+				height="470"
+				style_bg_color="0xe9c46a"
+				style_border_color="0xe9c46a"
 				map="{'A', 'B', 'C', 'D', '\n',
 						'E', 'F', 'G', 'H', '\n',
 						'I', 'J', 'K', 'L', '\n',
