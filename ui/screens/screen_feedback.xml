@@ -1,0 +1,19 @@
+<!-- If the permanent is not set, the default "false" will be applied.
+     It means the screen is created dynamically when it's opened
+     and deleted when it's closed.
+     It also mean that the widget states are lost-->
+<screen>
+	<view style_bg_color="0x264653" style_text_color="0xfff">
+		<lv_label text="ASL sign you chose: " align="top_left" x="10" y="10" />
+
+		<lv_label text="Detected ASL sign:" y="-30" x="10" align="left_mid" style_text_align="center" />
+
+		<!-- This is where the video feed should be -->
+
+		<!-- This button should open the main screen  -->
+		<lv_button align="bottom_right" y="-10" x="-10" style_bg_color="0x2a9d8f">
+			<lv_label text="Back" />
+			<screen_load_event screen="screen_main" anim_type="move_bottom" duration="500" />
+		</lv_button>
+	</view>
+</screen>
