@@ -1,0 +1,8 @@
+Screen: https://www.robotshop.com/products/yahboom-7-inch-capacitive-touch-screen-raspberry-pi-jetson-nano-rdk-x3-rdk-x5?variant=52668622766444
+* No SPI drivers or low-level display code needed
+* Touch shows up as a standard /dev/input/event* device
+
+* Switch to Kivy:
+sudo apt update
+sudo apt install python3-kivy
+sudo apt install python3-opencv
