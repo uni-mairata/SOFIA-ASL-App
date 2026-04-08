@@ -55,6 +55,8 @@
  * Subjects
  *----------------*/
 
+lv_subject_t selected_letter;
+
 /**********************
  *      MACROS
  **********************/
@@ -83,6 +85,15 @@ void Teddy_BEAR_init_gen(const char * asset_path)
     /*----------------
      * Subjects
      *----------------*/
+    static char selected_letter_buf[UI_SUBJECT_STRING_LENGTH];
+    static char selected_letter_prev_buf[UI_SUBJECT_STRING_LENGTH];
+    lv_subject_init_string(&selected_letter,
+                           selected_letter_buf,
+                           selected_letter_prev_buf,
+                           UI_SUBJECT_STRING_LENGTH,
+                           "N/A"
+                          );
+
     /*----------------
      * Translations
      *----------------*/
@@ -93,6 +104,7 @@ void Teddy_BEAR_init_gen(const char * asset_path)
     /* Register fonts */
 
     /* Register subjects */
+    lv_xml_register_subject(NULL, "selected_letter", &selected_letter);
 
     /* Register callbacks */
 #endif

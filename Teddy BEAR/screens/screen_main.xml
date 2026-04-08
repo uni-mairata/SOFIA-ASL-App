@@ -3,6 +3,7 @@
 		<lv_button width="50" height="35" x="7" y="4" style_bg_color="0xf4a261">
 			<lv_label text="power off" />
 		</lv_button>
+
 		<lv_label
 			text="Choose a letter to practice the ASL sign!"
 			align="top_mid"
@@ -11,27 +12,167 @@
 			width="239"
 			height="38"
 		/>
-		<lv_obj
-			align="bottom_mid"
-			width="310"
-			height="200"
-			scrollbar_mode="auto"
-			scroll_momentum=""
-			scroll_snap_x="center"
-			style_bg_color="0xe9c46a"
-		>
-			<lv_buttonmatrix
-				width="300"
-				height="470"
-				style_bg_color="0xe9c46a"
-				style_border_color="0xe9c46a"
-				map="{'A', 'B', 'C', 'D', '\n', 'E', 'F', 'G', 'H', '\n', 'I', 'J', 'K', 'L', '\n', 'M', 'N', 'O', 'P', '\n', 'Q', 'R', 'S', 'T', '\n', 'U', 'V', 'W', 'X', '\n', 'Y', 'Z', NULL}"
-				align="top_mid"
-			>
-				<!-- <subject_set_string_event trigger="clicked" subject="selected_letter" value="B" /> -->
-				<subject_set_string_event trigger="value_changed" subject="selected_letter" value="$selected" />
+
+		<lv_obj align="bottom_mid" width="300" height="200" style_bg_color="0xe9c46a">
+			<!-- Row 1 -->
+			<lv_button x="5" y="5" width="40" height="40">
+				<lv_label text="A" />
+				<subject_set_string_event trigger="clicked" subject="selected_letter" value="A" />
 				<screen_create_event screen="screen_feedback" anim_type="move_top" duration="500" />
-			</lv_buttonmatrix>
+			</lv_button>
+
+			<lv_button x="50" y="5" width="40" height="40">
+				<lv_label text="B" />
+				<subject_set_string_event trigger="clicked" subject="selected_letter" value="B" />
+				<screen_create_event screen="screen_feedback" anim_type="move_top" duration="500" />
+			</lv_button>
+
+			<lv_button x="95" y="5" width="40" height="40">
+				<lv_label text="C" />
+				<subject_set_string_event trigger="clicked" subject="selected_letter" value="C" />
+				<screen_create_event screen="screen_feedback" anim_type="move_top" duration="500" />
+			</lv_button>
+
+			<lv_button x="140" y="5" width="40" height="40">
+				<lv_label text="D" />
+				<subject_set_string_event trigger="clicked" subject="selected_letter" value="D" />
+				<screen_create_event screen="screen_feedback" anim_type="move_top" duration="500" />
+			</lv_button>
+
+			<lv_button x="185" y="5" width="40" height="40">
+				<lv_label text="E" />
+				<subject_set_string_event trigger="clicked" subject="selected_letter" value="E" />
+				<screen_create_event screen="screen_feedback" anim_type="move_top" duration="500" />
+			</lv_button>
+
+			<lv_button x="230" y="5" width="40" height="40">
+				<lv_label text="F" />
+				<subject_set_string_event trigger="clicked" subject="selected_letter" value="F" />
+				<screen_create_event screen="screen_feedback" anim_type="move_top" duration="500" />
+			</lv_button>
+
+			<lv_button x="275" y="5" width="40" height="40">
+				<lv_label text="G" />
+				<subject_set_string_event trigger="clicked" subject="selected_letter" value="G" />
+				<screen_create_event screen="screen_feedback" anim_type="move_top" duration="500" />
+			</lv_button>
+
+			<!-- Row 2 -->
+			<lv_button x="5" y="50" width="40" height="40">
+				<lv_label text="H" />
+				<subject_set_string_event trigger="clicked" subject="selected_letter" value="H" />
+				<screen_create_event screen="screen_feedback" anim_type="move_top" duration="500" />
+			</lv_button>
+
+			<lv_button x="50" y="50" width="40" height="40">
+				<lv_label text="I" />
+				<subject_set_string_event trigger="clicked" subject="selected_letter" value="I" />
+				<screen_create_event screen="screen_feedback" anim_type="move_top" duration="500" />
+			</lv_button>
+
+			<lv_button x="95" y="50" width="40" height="40">
+				<lv_label text="J" />
+				<subject_set_string_event trigger="clicked" subject="selected_letter" value="J" />
+				<screen_create_event screen="screen_feedback" anim_type="move_top" duration="500" />
+			</lv_button>
+
+			<lv_button x="140" y="50" width="40" height="40">
+				<lv_label text="K" />
+				<subject_set_string_event trigger="clicked" subject="selected_letter" value="K" />
+				<screen_create_event screen="screen_feedback" anim_type="move_top" duration="500" />
+			</lv_button>
+
+			<lv_button x="185" y="50" width="40" height="40">
+				<lv_label text="L" />
+				<subject_set_string_event trigger="clicked" subject="selected_letter" value="L" />
+				<screen_create_event screen="screen_feedback" anim_type="move_top" duration="500" />
+			</lv_button>
+
+			<lv_button x="230" y="50" width="40" height="40">
+				<lv_label text="M" />
+				<subject_set_string_event trigger="clicked" subject="selected_letter" value="M" />
+				<screen_create_event screen="screen_feedback" anim_type="move_top" duration="500" />
+			</lv_button>
+
+			<lv_button x="275" y="50" width="40" height="40">
+				<lv_label text="N" />
+				<subject_set_string_event trigger="clicked" subject="selected_letter" value="N" />
+				<screen_create_event screen="screen_feedback" anim_type="move_top" duration="500" />
+			</lv_button>
+
+			<!-- Row 3 -->
+			<lv_button x="5" y="95" width="40" height="40">
+				<lv_label text="O" />
+				<subject_set_string_event trigger="clicked" subject="selected_letter" value="O" />
+				<screen_create_event screen="screen_feedback" anim_type="move_top" duration="500" />
+			</lv_button>
+
+			<lv_button x="50" y="95" width="40" height="40">
+				<lv_label text="P" />
+				<subject_set_string_event trigger="clicked" subject="selected_letter" value="P" />
+				<screen_create_event screen="screen_feedback" anim_type="move_top" duration="500" />
+			</lv_button>
+
+			<lv_button x="95" y="95" width="40" height="40">
+				<lv_label text="Q" />
+				<subject_set_string_event trigger="clicked" subject="selected_letter" value="Q" />
+				<screen_create_event screen="screen_feedback" anim_type="move_top" duration="500" />
+			</lv_button>
+
+			<lv_button x="140" y="95" width="40" height="40">
+				<lv_label text="R" />
+				<subject_set_string_event trigger="clicked" subject="selected_letter" value="R" />
+				<screen_create_event screen="screen_feedback" anim_type="move_top" duration="500" />
+			</lv_button>
+
+			<lv_button x="185" y="95" width="40" height="40">
+				<lv_label text="S" />
+				<subject_set_string_event trigger="clicked" subject="selected_letter" value="S" />
+				<screen_create_event screen="screen_feedback" anim_type="move_top" duration="500" />
+			</lv_button>
+
+			<lv_button x="230" y="95" width="40" height="40">
+				<lv_label text="T" />
+				<subject_set_string_event trigger="clicked" subject="selected_letter" value="T" />
+				<screen_create_event screen="screen_feedback" anim_type="move_top" duration="500" />
+			</lv_button>
+
+			<lv_button x="275" y="95" width="40" height="40">
+				<lv_label text="U" />
+				<subject_set_string_event trigger="clicked" subject="selected_letter" value="U" />
+				<screen_create_event screen="screen_feedback" anim_type="move_top" duration="500" />
+			</lv_button>
+
+			<!-- Row 4 -->
+			<lv_button x="5" y="140" width="40" height="40">
+				<lv_label text="V" />
+				<subject_set_string_event trigger="clicked" subject="selected_letter" value="V" />
+				<screen_create_event screen="screen_feedback" anim_type="move_top" duration="500" />
+			</lv_button>
+
+			<lv_button x="50" y="140" width="40" height="40">
+				<lv_label text="W" />
+				<subject_set_string_event trigger="clicked" subject="selected_letter" value="W" />
+				<screen_create_event screen="screen_feedback" anim_type="move_top" duration="500" />
+			</lv_button>
+
+			<lv_button x="95" y="140" width="40" height="40">
+				<lv_label text="X" />
+				<subject_set_string_event trigger="clicked" subject="selected_letter" value="X" />
+				<screen_create_event screen="screen_feedback" anim_type="move_top" duration="500" />
+			</lv_button>
+
+			<lv_button x="140" y="140" width="40" height="40">
+				<lv_label text="Y" />
+				<subject_set_string_event trigger="clicked" subject="selected_letter" value="Y" />
+				<screen_create_event screen="screen_feedback" anim_type="move_top" duration="500" />
+			</lv_button>
+
+			<lv_button x="185" y="140" width="40" height="40">
+				<lv_label text="Z" />
+				<subject_set_string_event trigger="clicked" subject="selected_letter" value="Z" />
+				<screen_create_event screen="screen_feedback" anim_type="move_top" duration="500" />
+			</lv_button>
 		</lv_obj>
 	</view>
 </screen>

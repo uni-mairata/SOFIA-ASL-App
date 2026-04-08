@@ -31,6 +31,22 @@ extern "C" {
  *      DEFINES
  *********************/
 
+#define DARK_BLUE lv_color_hex(0x264653)
+
+#define YELLOW lv_color_hex(0xe9c46a)
+
+#define TEAL lv_color_hex(0x2a9d8f)
+
+#define VIBRANT_YELLOW lv_color_hex(0xf9c74f)
+
+#define ORANGE lv_color_hex(0xf4a261)
+
+#define UNIT_SMALL 6
+
+#define UNIT_MEDIUM 12
+
+#define UNIT_LARGE 24
+
 /**********************
  *      TYPEDEFS
  **********************/
@@ -59,6 +75,8 @@ extern "C" {
  * Subjects
  *----------------*/
 
+extern lv_subject_t selected_letter;
+
 /**********************
  * GLOBAL PROTOTYPES
  **********************/
@@ -80,6 +98,10 @@ void Teddy_BEAR_init_gen(const char * asset_path);
 /**********************
  *   POST INCLUDES
  **********************/
+
+/*Include all the widgets, components and screens of this library*/
+#include "screens/screen_feedback_gen.h"
+#include "screens/screen_main_gen.h"
 
 #ifdef __cplusplus
 } /*extern "C"*/
