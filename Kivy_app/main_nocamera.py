@@ -28,6 +28,13 @@ class MenuScreen(Screen):
             font_size=40,
             size_hint=(1, 0.15)
         )
+        exit_btn = Button(
+            text="power",
+            font_size=30,
+            width=20,
+            height=20
+        )
+        outer_layout.add_widget(exit_btn)
         outer_layout.add_widget(title)
 
         # Scrollable area
@@ -36,10 +43,11 @@ class MenuScreen(Screen):
         # Grid of buttons (5 per row), minimal spacing
         grid = GridLayout(
             cols=5,
-            # spacing=4,       # very small spacing between buttons
-            # padding=4,       # minimal padding inside grid
+            spacing=15,       # spacing between buttons
+            padding=20,       # padding inside grid
             size_hint_y=None
         )
+
         grid.bind(minimum_height=grid.setter("height"))
 
         # Create square buttons A–Z
@@ -47,30 +55,29 @@ class MenuScreen(Screen):
             btn = Button(
                 text=letter,
                 font_size=40,
-                size_hint_y=None,
-                height=140
+                size_hint=(None, None),
+                width=160,
+                height=160
             )
-            btn.bind(size=self.make_square)
-            btn.bind(on_release=lambda b: self.go_to_detail(b.text))
+
+            # btn.bind(size=self.make_square)
+            btn.bind(on_release=lambda b: self.go_to_feedback(b.text))
             grid.add_widget(btn)
 
         scroll.add_widget(grid)
         outer_layout.add_widget(scroll)
         self.add_widget(outer_layout)
 
-    def make_square(self, instance, value):
-        instance.width = instance.height  # force square shape
-
-    def go_to_detail(self, text):
-        detail = self.manager.get_screen("detail")
-        detail.update_text(text)
-        self.manager.current = "detail"
+    def go_to_feedback(self, text):
+        feedback = self.manager.get_screen("feedback")
+        feedback.update_text(text)
+        self.manager.current = "feedback"
 
 
 # -----------------------------
-# Detail Screen (text + back button)
+# Feedback Screen (text + back button)
 # -----------------------------
-class DetailScreen(Screen):
+class FeedbackScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
@@ -107,7 +114,7 @@ class MyApp(App):
     def build(self):
         sm = ScreenManager(transition=FadeTransition())
         sm.add_widget(MenuScreen(name="menu"))
-        sm.add_widget(DetailScreen(name="detail"))
+        sm.add_widget(FeedbackScreen(name="feedback"))
         return sm
 
 
