@@ -1,9 +1,9 @@
 from kivy.config import Config
 # Enable fullscreen before Kivy loads
-# Config.set('graphics', 'fullscreen', 'auto') # TODO: UNCOMMENT THIS AFTER DONE DESIGNING UI
-# Config.set('graphics', 'borderless', '1') # TODO: UNCOMMENT THIS AFTER DONE DESIGNING UI
-Config.set('graphics', 'width', '1024')
-Config.set('graphics', 'height', '600')
+Config.set('graphics', 'fullscreen', 'auto')
+Config.set('graphics', 'borderless', '1')
+# Config.set('graphics', 'width', '1024')
+# Config.set('graphics', 'height', '600')
 
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager, Screen, FadeTransition
@@ -17,7 +17,7 @@ from kivy.core.text import LabelBase
 from kivy.core.window import Window
 from kivy.clock import Clock
 
-# from sign_practice_game_rpi import run_game # TODO: UNCOMMENT THIS AFTER DONE DESIGNING UI
+from sign_practice_game_rpi import run_game
 import time
 
 LabelBase.register(name="Icons", fn_regular="material-design-icons/font/MaterialIcons-Regular.ttf")
@@ -120,7 +120,7 @@ class MenuScreen(Screen):
             # feedback = self.manager.get_screen("feedback")
             # feedback.update_text(text)
             # self.manager.current = "feedback"
-            # run_game(start_letter=text) # TODO: UNCOMMENT THIS AFTER UI DESIGNING IS DONE
+            run_game(start_letter=text)
             Clock.schedule_once(lambda dt: self.end_cooldown(), 3) # Should wait for 3 seconds
 
     def end_cooldown(self):
