@@ -34,8 +34,8 @@ class MenuScreen(Screen):
 
         # Outer layout with padding
         outer_layout = BoxLayout(
-            orientation="vertical",
-            spacing=10,
+            orientation="vertical", 
+            spacing=10, 
             padding=40
         )
 
@@ -44,37 +44,34 @@ class MenuScreen(Screen):
             text="Choose the ASL sign you want to learn!",
             font_size=32,
             size_hint=(None, None),
-            size=(680, 100),
+            size=(670, 60),
             valign="middle"
         )
         exit_btn = Button(
             text="\ue8ac",
-            font_size=50,
+            font_size=30,
             font_name="Icons",
             size_hint=(None, None),
-            width=100,
-            height=100,
-            pos_hint={"center_y": 0.4},
+            width=70,
+            height=70,
             background_normal='',
             background_color=(217/255, 191/255, 119/255, 1) # D9BF77
         )
-        exit_btn.bind(on_press=self.exit_app)
         logo = Image(
-            source='Teddy_BEAR_logo.png',
-            size_hint=(None,None),
-            x=30,
-            width=140,
-            height=140,
-            pos_hint={"center_y": 0.4}
-        )
-        top_bar = BoxLayout(
-            orientation="horizontal",
-            size_hint=(1, None),
-            height=100)
-        top_bar.add_widget(logo)
-        top_bar.add_widget(title)
-        top_bar.add_widget(exit_btn)
-        outer_layout.add_widget(top_bar)
+            source='Teddy_BEAR_logo.png', 
+            size_hint=(None,None), 
+            size=(700, 30),
+            width=200, 
+            height=200)
+        inner_layout = BoxLayout(
+            orientation="horizontal", 
+            size_hint=(1, None), 
+            height=60)
+        exit_btn.bind(on_press=self.exit_app)
+        inner_layout.add_widget(exit_btn)
+        inner_layout.add_widget(title)
+        inner_layout.add_widget(logo)
+        outer_layout.add_widget(inner_layout)
 
         # Scrollable area
         #scroll = ScrollView(size_hint=(1, 0.85))
@@ -85,7 +82,8 @@ class MenuScreen(Screen):
             cols=5,
             spacing=15,       # spacing between buttons
             padding=20,       # padding inside grid
-            size_hint_y=None
+            size_hint_y=None,
+            pos_hint={"center_x": 0.5}
         )
         grid.bind(minimum_height=grid.setter("height"))
 
@@ -120,14 +118,19 @@ class MenuScreen(Screen):
             # feedback = self.manager.get_screen("feedback")
             # feedback.update_text(text)
             # self.manager.current = "feedback"
-            run_game(start_letter=text)
-            Clock.schedule_once(lambda dt: self.end_cooldown(), 3) # Should wait for 3 seconds
-
+            Window.hide()
+            time.sleep(0.05)
+            try:
+                run_game(start_letter=text)
+            finally:
+                Window.show()            
+            Clock.schedule_once(lambda dt: self.end_cooldown(), 0.5) # Should wait for 5 seconds
+    
     def end_cooldown(self):
         self.btn_cooldown = False
 
 
-    def exit_app(self, instance):
+    def exit_app(self, instance): 
         App.get_running_app().stop()
         Window.close() # Close window entirely
 
